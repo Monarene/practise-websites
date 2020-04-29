@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
+import style from "./recipe.module.css";
 import "./App.css";
 
 function App() {
@@ -46,15 +47,16 @@ function App() {
           search
         </button>
       </form>
-      {recipes.map((recipe) => (
-        <Recipe
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-        />
-      ))}
+      <div className="recipes">
+        {recipes.map((recipe) => (
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
+        ))}
+      </div>
     </div>
   );
 }
